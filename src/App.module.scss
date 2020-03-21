@@ -47,11 +47,19 @@ input {
     outline: none;
   }
 }
+form{
+  text-align: center;
+}
 button{
   line-height: 20px;
   margin-bottom: 10px;
   border-radius: 5px;
-  padding: 3px 5px;
+  padding: 10px 10px;
   border: 1px solid #eee;
   cursor: pointer;
+  font-size: 15px;
+  background-color: #6685ba;
+  color: #eeeeee;
+  font-weight: bold;
+  align-items: center;
 }

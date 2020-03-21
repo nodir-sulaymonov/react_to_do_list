@@ -1,8 +1,10 @@
 import React from 'react';
-import logo from './logo.svg';
+import logo from '../logo.svg';
 import classnames from "classnames/bind";
-import "./App.css";
-import styles from "./App.module.scss";
+import "../App.css";
+import styles from "../App.module.scss";
+import {connect} from 'react-redux';
+import * as addPeople from '../actions/addPeople';
 
 const cx = classnames.bind(styles);
 
@@ -16,22 +18,24 @@ class App extends React.Component {
     };
 
     handleSortName = () => {
-        let newData = this.state.data.sort((a, b) => {
-            let nameA = a.name.toUpperCase();
-            let nameB = b.name.toUpperCase();
-            if (nameA < nameB) {
-                return -1;
-            }
-            if (nameA > nameB) {
-                return 1;
-            }
-        });
-        this.setState({
-            sortResult: !this.state.sortResult,
-            data: newData
-        })
+        this.props.sortByName();
+        // let newData = this.state.data.sort((a, b) => {
+        //     let nameA = a.name.toUpperCase();
+        //     let nameB = b.name.toUpperCase();
+        //     if (nameA < nameB) {
+        //         return -1;
+        //     }
+        //     if (nameA > nameB) {
+        //         return 1;
+        //     }
+        // });
+        // this.setState({
+        //     sortResult: !this.state.sortResult,
+        //     data: newData
+        // })
     };
     handleSortPriority = () => {
+        this.props.sortByPriority();
         let newData = this.state.data.sort((a, b) => {
             if (this.state.sortResult) {
                 return a.priority - b.priority;
@@ -44,24 +48,29 @@ class App extends React.Component {
     };
     handleThemeChange = e => {
         let { name, value } = e.target;
-        this.setState({ [name]: value });
+        this.setState({...this.state, [name]: value });
     };
 
-    handle(name, description, priority) {
-        this.addProductToBasket(name, description,priority);
+    handle(name, description, priority, event) {
+        event.preventDefault();
+        this.props.addPeopleSuccess({name, description, priority});
+        this.setState({
+            name: '', priority:'', description:''
+        })
+        // this.addProductToBasket(name, description,priority);
     }
 
-    addProductToBasket(name, description,priority) {
-        let newArray = this.state.data.slice();
-        let itemToBeAdded = {
-            name : name,
-            description : description,
-            priority:priority
-        };
-        newArray.push(itemToBeAdded);
-        console.log(newArray);
-        this.setState( {data:[newArray]})
-    }
+    // addProductToBasket(name, description,priority) {
+    //     let newArray = this.state.data.slice();
+    //     let itemToBeAdded = {
+    //         name : name,
+    //         description : description,
+    //         priority:priority
+    //     };
+    //     newArray.push(itemToBeAdded);
+    //
+    //     this.setState( {...this.state, data:newArray});
+    // }
     render() {
         return (
             <div
@@ -79,7 +88,7 @@ class App extends React.Component {
                     </div>
                 </div>
                 <ul className={cx("list_container",)}>
-                    {this.state.data.map(function (item, i) {
+                    {this.props.addList.people.map(function (item, i) {
                         return <li key={i}>
                                     <div className={cx("list_container_left",)}>
                                         <h3>{item.name} </h3><hr/>
@@ -91,14 +100,14 @@ class App extends React.Component {
                             </li>
                     })}
                 </ul>
-                <form onSubmit={ () => this.handle(this.state.name, this.state.description, this.state.priority)}>
+                <form onSubmit={ (event) => this.handle(this.state.name, this.state.description, this.state.priority, event)}>
                     <div className={cx("input")}>
                         <div>
                             <input
                                 type="input"
                                 name="name"
                                 id="light"
-                                value={this.state.data.name}
+                                value={this.state.name}
                                 onChange={this.handleThemeChange}
                             />
                         </div>
@@ -108,7 +117,7 @@ class App extends React.Component {
                                 type="input"
                                 name="description"
                                 id="dark"
-                                value={this.state.value}
+                                value={this.state.description}
                                 onChange={this.handleThemeChange}
                             />
                         </div>
@@ -117,7 +126,7 @@ class App extends React.Component {
                                 type="input"
                                 name="priority"
                                 id="dark"
-                                value={this.state.value}
+                                value={this.state.priority}
                                 onChange={this.handleThemeChange}
                             />
                         </div>
@@ -128,5 +137,16 @@ class App extends React.Component {
         );
     }
 }
+const mapStateToProps = state => ({
+    addList: state.addList,
+});
 
-export default App;
+const mapDispatchToProps = (dispatch) => {
+    return {
+        addPeopleSuccess: people => dispatch(addPeople.addPeopleSuccess(people)),
+        sortByName: ()=>dispatch(addPeople.sortByName()),
+        sortByPriority: ()=>dispatch(addPeople.sortByPriority())
+    }
+};
+
+export default connect(mapStateToProps,mapDispatchToProps)(App);
