@@ -1,10 +1,11 @@
 import React from 'react';
 import logo from '../logo.svg';
 import classnames from "classnames/bind";
-import "../App.css";
-import styles from "../App.module.scss";
+import "../styles/App.css";
+import styles from "../styles/App.module.scss";
 import {connect} from 'react-redux';
 import * as addPeople from '../actions/addPeople';
+import {Link} from "react-router-dom";
 
 const cx = classnames.bind(styles);
 
@@ -79,6 +80,7 @@ class App extends React.Component {
                 })}
             >
                 <img src={logo} className="App-logo" alt="logo"/>
+                <button style={{backgroundColor:'#61dafb'}}><Link to="/">Back</Link></button>
                 <div className="section_btn">
                     <div>
                         <button className="btn_primary" onClick={this.handleSortName}> Sort by name</button>
