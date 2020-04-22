@@ -5,6 +5,7 @@ import PublicRoute from "./routes/route";
 import { Provider } from "react-redux";
 import configureStore from '../src/store/ConfigureStore';
 
+
 const store = configureStore();
 
 ReactDOM.render(

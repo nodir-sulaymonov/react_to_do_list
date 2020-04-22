@@ -38,7 +38,7 @@ class Project extends React.Component{
             name: '',
             id: ''
         });
-        this.props.createContact(contact);
+        this.props.createProject(contact, this.props.history);
     }
 
     listView(data, index){
@@ -60,7 +60,7 @@ class Project extends React.Component{
 
     deleteContact(e, index){
         e.preventDefault();
-        this.props.deleteContact(index);
+        this.props.deleteProject(index, this.props.history);
     }
     render() {
         return (
@@ -91,8 +91,8 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        createContact: contact => dispatch(contactAction.createContact(contact)),
-        deleteContact: index =>dispatch(contactAction.deleteContact(index))
+        createProject: contact => dispatch(contactAction.createProject(contact, this.props.history)),
+        deleteProject: index =>dispatch(contactAction.deleteProject(index))
     }
 };
 

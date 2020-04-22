@@ -54,7 +54,7 @@ class App extends React.Component {
 
     handle(name, description, priority, event) {
         event.preventDefault();
-        this.props.addPeopleSuccess({name, description, priority});
+        this.props.createTask({name, description, priority}, this.props.history);
         this.setState({
             name: '', priority:'', description:''
         })
@@ -145,7 +145,7 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        addPeopleSuccess: people => dispatch(addPeople.addPeopleSuccess(people)),
+        createTask: people => dispatch(addPeople.createTask(people)),
         sortByName: ()=>dispatch(addPeople.sortByName()),
         sortByPriority: ()=>dispatch(addPeople.sortByPriority())
     }

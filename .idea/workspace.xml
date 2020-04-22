@@ -2,20 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b816f4df-16b3-497c-ac3c-80cb51bd4993" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Container/Home.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Container/Project.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/actions/addProject.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/reducers/add-project-reducer.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/routes/route.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/styles/Projects.module.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/common/common.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/App.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/App.module.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Container/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Container/App.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Container/Project.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Container/Project.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/actions/addPeople.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/actions/addPeople.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/actions/addProject.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/actions/addProject.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/reducers/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducers/index.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/ConfigureStore.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/ConfigureStore.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -95,6 +91,7 @@
       <workItem from="1583489972802" duration="11453000" />
       <workItem from="1584805406193" duration="17299000" />
       <workItem from="1585736433770" duration="17153000" />
+      <workItem from="1587578755097" duration="7702000" />
     </task>
     <task id="LOCAL-00001" summary="second commit">
       <created>1583530783305</created>
@@ -146,38 +143,38 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="499" y="159" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.824@0.0.1536.824" timestamp="1584805459499" />
-    <state x="393" y="6" key="CommitChangelistDialog2" timestamp="1584823358416">
+    <state x="393" y="6" key="CommitChangelistDialog2" timestamp="1585773269429">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="393" y="6" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1584823358416" />
+    <state x="393" y="6" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1585773269429" />
     <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1584806878212">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1584806878212" />
-    <state width="1515" height="208" key="GridCell.Tab.0.bottom" timestamp="1585741394327">
+    <state width="1515" height="208" key="GridCell.Tab.0.bottom" timestamp="1587586348845">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1515" height="208" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1585741394327" />
-    <state width="1515" height="208" key="GridCell.Tab.0.center" timestamp="1585741394327">
+    <state width="1515" height="208" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1587586348845" />
+    <state width="1515" height="208" key="GridCell.Tab.0.center" timestamp="1587586348845">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1515" height="208" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1585741394327" />
-    <state width="1515" height="208" key="GridCell.Tab.0.left" timestamp="1585741394327">
+    <state width="1515" height="208" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1587586348845" />
+    <state width="1515" height="208" key="GridCell.Tab.0.left" timestamp="1587586348845">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1515" height="208" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1585741394327" />
-    <state width="1515" height="208" key="GridCell.Tab.0.right" timestamp="1585741394327">
+    <state width="1515" height="208" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1587586348845" />
+    <state width="1515" height="208" key="GridCell.Tab.0.right" timestamp="1587586348845">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1515" height="208" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1585741394327" />
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1584823372694">
+    <state width="1515" height="208" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1587586348845" />
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1585773278633">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1584823372694" />
-    <state x="93" y="93" width="1350" height="638" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1585749069968">
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1585773278633" />
+    <state x="93" y="93" width="1350" height="638" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1587586349971">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="93" y="93" width="1350" height="638" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1536.824@0.0.1536.824" timestamp="1585749069968" />
+    <state x="93" y="93" width="1350" height="638" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1536.824@0.0.1536.824" timestamp="1587586349971" />
     <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1583495843005">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
