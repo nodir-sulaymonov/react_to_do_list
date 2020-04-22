@@ -1,10 +1,11 @@
 import React from 'react';
 import logo from '../logo.svg';
 import classnames from "classnames/bind";
-import "../App.css";
-import styles from "../App.module.scss";
+import "../styles/App.css";
+import styles from "../styles/App.module.scss";
 import {connect} from 'react-redux';
 import * as addPeople from '../actions/addPeople';
+import {Link} from "react-router-dom";
 
 const cx = classnames.bind(styles);
 
@@ -53,7 +54,7 @@ class App extends React.Component {
 
     handle(name, description, priority, event) {
         event.preventDefault();
-        this.props.addPeopleSuccess({name, description, priority});
+        this.props.createTask({name, description, priority}, this.props.history);
         this.setState({
             name: '', priority:'', description:''
         })
@@ -79,6 +80,7 @@ class App extends React.Component {
                 })}
             >
                 <img src={logo} className="App-logo" alt="logo"/>
+                <button style={{backgroundColor:'#61dafb'}}><Link to="/">Back</Link></button>
                 <div className="section_btn">
                     <div>
                         <button className="btn_primary" onClick={this.handleSortName}> Sort by name</button>
@@ -143,7 +145,7 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        addPeopleSuccess: people => dispatch(addPeople.addPeopleSuccess(people)),
+        createTask: people => dispatch(addPeople.createTask(people)),
         sortByName: ()=>dispatch(addPeople.sortByName()),
         sortByPriority: ()=>dispatch(addPeople.sortByPriority())
     }

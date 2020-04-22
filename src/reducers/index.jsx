@@ -1,5 +1,7 @@
 import {combineReducers} from 'redux';
-import addReducer from './add-poeple-reducer';
+import addPeople from './add-poeple-reducer';
+import addProjects from './add-project-reducer'
 export default combineReducers({
-    addList: addReducer
+    addList: addPeople,
+    contacts: addProjects
 });

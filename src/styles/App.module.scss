@@ -14,12 +14,13 @@ label {
   }
 }
 
-ul li{
+.list_container li{
   display: flex;
   flex-direction: row;
   border: dotted #9fb4f2 2px;
   margin: 10px;
   list-style-type: none;
+  width: 30%;
 }
 
 .list_container {
