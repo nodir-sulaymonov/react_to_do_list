@@ -54,7 +54,7 @@ class App extends React.Component {
 
     handle(name, description, priority, event) {
         event.preventDefault();
-        this.props.createTask({name, description, priority}, this.props.history);
+        this.props.createTask({name, description, priority});
         this.setState({
             name: '', priority:'', description:''
         })

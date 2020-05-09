@@ -4,14 +4,23 @@ label {
 
 .container {
   display: flex;
-  flex-direction: column;
+  justify-content: center;
   align-items: center;
-
+  flex-direction: column;
   min-height: 100vh;
 
   &-theme-light {
-    background-color: bisque;
+    background-color:  #eeeeee;
   }
+}
+
+.sign_in_up{
+  display: flex;
+  font-size: 25px;
+  margin-bottom: 20px;
+  font-family: "Arial", serif;
+  font-weight: bold;
+  color: #6685ba;
 }
 
 .list_container li{
@@ -42,7 +51,8 @@ input {
   margin-bottom: 10px;
   border-radius: 5px;
   padding: 3px 5px;
-  border: 1px solid #eee;
+  border: 1px solid cornflowerblue;
+  width: 70%;
 
   &:focus {
     outline: none;
@@ -63,4 +73,5 @@ button{
   color: #eeeeee;
   font-weight: bold;
   align-items: center;
+  width: 40%;
 }
