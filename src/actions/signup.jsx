@@ -1,6 +1,8 @@
 import {apiUrl} from "../common/common";
 import axios from 'axios';
-import {successNotifiy,failureNotify} from "notifications/notifications";
+import {successNotifiy,failureNotify} from "./notifications/notifications";
+
+
 
 export const SIGN_UP_STARTED = 'SIGN_UP_STARTED';
 export const SIGN_UP_SUCCESS = 'SIGN_UP_SUCCESS';
@@ -8,13 +10,16 @@ export const SIGN_UP_FAILURE = 'SIGN_UP_FAILURE';
 
 
 
-export const signUp = (values) =>{
+export const signUp = (values, history) =>{
     return dispatch => {
         dispatch(signUpStarter());
-        axios.post(`${apiUrl}sign-up`, values)
+        axios.post(`${apiUrl}api/register/`, {
+            ...values,
+        })
             .then(res => {
                 dispatch(signUpSuccess(res.data));
-                successNotifiy('OK','You successfully registered,please confirm your email.')
+                successNotifiy('OK','You successfully registered.')
+                history.push('/');
             })
             .catch(err => {
                 dispatch(signUpError(err.message));

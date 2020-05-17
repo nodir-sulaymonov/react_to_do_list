@@ -9,90 +9,91 @@ import {Link} from "react-router-dom";
 const cx = classnames.bind(styles);
 
 
-
-class Project extends React.Component{
-    constructor(props){
+class Project extends React.Component {
+    constructor(props) {
         super(props);
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
 
         this.state = {
             name: '',
-            id: ''
+            tasksCount: ''
         }
     }
 
-    handleChange(e){
+    componentDidMount() {
+        this.props.fetchProjectList()
+    }
+
+    handleChange(e) {
         this.setState({
             name: e.target.value
         })
     }
 
-    handleSubmit(e){
+    handleSubmit(e) {
         e.preventDefault();
-        let contact = {
-            name: this.state.name,
-            id: this.props.contacts.length
-        };
-        this.setState({
-            name: '',
-            id: ''
-        });
-        this.props.createProject(contact, this.props.history);
+        this.props.createProject({name: this.state.name});
     }
 
-    listView(data, index){
+    listView(data, index) {
         return (
             <div className="list-projects">
                 <div className="col-md-10">
                     <li key={index} className="list-li">
-                        <Link to={`/projects/${data.id}`}>{data.name}</Link>
+                        <div style={{
+                            display: 'flex',
+                            justifyContent: 'space-between',
+                            alignItems: 'center'
+                        }}>
+                            <div>
+                                <Link to={`/projects/${data.id}/tasks/`}>Project name: {data.name}</Link>
+                            </div>
+                            <div>
+                                Tasks: {data.tasksCount}
+                            </div>
+                        </div>
                     </li>
-                </div>
-                <div className="col-md-2">
-                    <button onClick={(e) => this.deleteContact(e, index)}>
-                        Remove
-                    </button>
                 </div>
             </div>
         )
     }
 
-    deleteContact(e, index){
-        e.preventDefault();
-        this.props.deleteProject(index, this.props.history);
-    }
     render() {
         return (
             <div className="container">
                 <h1>Create projects</h1>
-                <button style={{backgroundColor:'#61dafb'}}><Link to="/">Back</Link></button>
+                <button style={{backgroundColor: '#61dafb'}}><Link to="/">Back</Link></button>
                 <div>
                     <form onSubmit={this.handleSubmit}>
                         <div className={cx("form-add")}>
                             <label>Name projects:</label>
-                            <input type="text" onChange={this.handleChange} className="form-control" value={this.state.name}/><br />
-                            <button type="submit">Submit</button>
+                            <input type="text" onChange={this.handleChange}
+                                   value={this.state.name}/><br/>
+                            <button type="submit">Add Project</button>
                         </div>
                     </form>
-                    { <ul className="list-group">
-                        {this.props.contacts.map((contact, i) => this.listView(contact, i))}
-                    </ul> }
+                    <ul className="list-group">
+                        {
+                            this.props.projects.map((contact, i) => this.listView(contact, i))
+                        }
+                    </ul>
                 </div>
             </div>
         );
     }
 }
-const mapStateToProps = (state, ownProps) => {
+
+const mapStateToProps = (state) => {
     return {
-        contacts: state.contacts
+        projects: state.contacts.projectList
     }
 };
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        createProject: contact => dispatch(contactAction.createProject(contact, this.props.history)),
-        deleteProject: index =>dispatch(contactAction.deleteProject(index))
+        createProject: contact => dispatch(contactAction.createProject(contact)),
+        fetchProjectList: () => dispatch(contactAction.fetchProjectList())
     }
 };
 

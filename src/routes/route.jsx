@@ -1,25 +1,32 @@
 import React from "react";
-import { BrowserRouter, Switch, Route} from "react-router-dom";
-import Project from "../Container/Project";
-import App from "../Container/App";
+import {Switch, Route} from 'react-router-dom'
+
+import Projects from "../Container/Project";
+import Tasks from "../Container/Task";
 import Home from "../Container/Home";
-import SignIn from "../Container/SignIn";
-import SignUp from "../Container/SingUp";
+import Login from "../Container/SignIn";
+import Register from "../Container/SingUp";
+
 
 const PublicRoute = ()=>{
-    return(
-        <div style={{height: '100%'}}>
-            <BrowserRouter>
-                     <Switch>
-                         <Route exact path="/" component={Home}/>
-                         <Route exact path="/projects" component={Project}/>
-                         <Route exact path="/signin" component={SignIn}/>
-                         <Route exact path="/signup" component={SignUp}/>
-                         <Route  path="/projects/0" component={App}/>
-                     </Switch>
-            </BrowserRouter>
-        </div>
-    )
-};
+        return (
+            <div>
+                <div style={{height: '100%'}}>
+                    <div>
+                        <Switch>
+                            <Route exat path='/login/' component={Login} />
+                            <Route exact path='/' component={Home} />
+                            <Route exact path = '/register/' component={Register} />
+                            <Route exact path='/projects/' component={Projects} />
+                            <Route path='/projects/:projectId' children={<Tasks/>} />
+                        </Switch>
+                    </div>
+                </div>
+                )
+            </div>
+        );
+}
+
+
 
 export default PublicRoute;

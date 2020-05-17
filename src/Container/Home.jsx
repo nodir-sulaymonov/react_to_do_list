@@ -1,28 +1,37 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React from 'react';
+
+import classnames from "classnames/bind";
+
+import styles from "../styles/App.module.scss";
+import {withRouter} from "react-router-dom";
+
+
+
+
+const cx = classnames.bind(styles);
+
+
+
+
 class Home extends React.Component{
+constructor(props) {
+    super(props);
+}
     render() {
         return(
-            <div>
-                <ul>
-                    <li>
-                        <Link to="/projects">
-                            <h2>
-                                Projects
-                            </h2>
-                        </Link>
-                    </li>
-                    <li>
-                        <Link to="/projects/0">
-                            <h2>
-                                Tasks
-                            </h2>
-                        </Link>
-                    </li>
-                </ul>
+            <div className={cx("container",{
+                [`container-theme-light`]: true
+            })}>
+                    <button
+                        type="submit"
+                        onClick={() => {
+                            this.props.history.push('/projects/')
+                        }}
+                    >Projects</button>
+
             </div>
         )
     }
 }
 
-export default Home;
+export default withRouter(Home);
