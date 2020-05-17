@@ -3,28 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="b816f4df-16b3-497c-ac3c-80cb51bd4993" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Container/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Container/Task.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Container/Home.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Container/Home.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Container/Project.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Container/Project.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Container/SignIn.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Container/SignIn.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Container/SingUp.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Container/SingUp.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/actions/addPeople.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/actions/addTask.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/actions/addProject.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/actions/addProject.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/actions/signin.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/actions/signin.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/actions/signup.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/actions/signup.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/reducers/add-poeple-reducer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducers/add-task-reducer.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/reducers/add-project-reducer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducers/add-project-reducer.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/reducers/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducers/index.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/reducers/sign-in-reducer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducers/sign-in-reducer.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/routes/route.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/route.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/ConfigureStore.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/ConfigureStore.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/App.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/App.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/Projects.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/Projects.module.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -101,7 +82,7 @@
       <workItem from="1585736433770" duration="17153000" />
       <workItem from="1587578755097" duration="7983000" />
       <workItem from="1588684083984" duration="9486000" />
-      <workItem from="1589055971242" duration="104113000" />
+      <workItem from="1589055971242" duration="106128000" />
     </task>
     <task id="LOCAL-00001" summary="second commit">
       <created>1583530783305</created>
@@ -131,7 +112,14 @@
       <option name="project" value="LOCAL" />
       <updated>1589062601929</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="connect API, all changes">
+      <created>1589734292991</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1589734292991</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -159,7 +147,8 @@
     <MESSAGE value="react-redux, store" />
     <MESSAGE value="api with redux" />
     <MESSAGE value="signin-signup commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="signin-signup commit" />
+    <MESSAGE value="connect API, all changes" />
+    <option name="LAST_COMMIT_MESSAGE" value="connect API, all changes" />
   </component>
   <component name="WindowStateProjectService">
     <state x="410" y="179" key="#com.intellij.ide.fileTemplates.ui.ConfigureTemplatesDialog" timestamp="1584805837033">
@@ -170,10 +159,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="499" y="159" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.824@0.0.1536.824" timestamp="1589631159469" />
-    <state x="393" y="0" key="CommitChangelistDialog2" timestamp="1589062601188">
+    <state x="393" y="0" key="CommitChangelistDialog2" timestamp="1589734292065">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="393" y="0" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1589062601188" />
+    <state x="393" y="0" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1589734292065" />
     <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1589624522706">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -198,10 +187,10 @@
     </state>
     <state width="1515" height="324" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1589727524713" />
     <state width="1515" height="208" key="GridCell.Tab.0.right/1920.0.1536.832/0.0.1920.1040@1920.0.1536.832" timestamp="1588717178467" />
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1589062612323">
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1589734301640">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1589062612323" />
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1589734301640" />
     <state x="93" y="93" width="1350" height="638" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1589712128592">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

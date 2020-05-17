@@ -18,7 +18,8 @@ export const signUp = (values, history) =>{
         })
             .then(res => {
                 dispatch(signUpSuccess(res.data));
-                successNotifiy('OK','You successfully registered.')
+                successNotifiy('OK','You successfully registered.');
+                localStorage.setItem('token', res.data.token);
                 history.push('/');
             })
             .catch(err => {
