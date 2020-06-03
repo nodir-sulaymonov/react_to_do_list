@@ -38,9 +38,9 @@ class Project extends React.Component {
 
     listView(data, index) {
         return (
-            <div className="list-projects">
+            <div key={index}  className="list-projects">
                 <div className="col-md-10">
-                    <li key={index} className="list-li">
+                    <li className="list-li">
                         <div style={{
                             display: 'flex',
                             justifyContent: 'space-between',
@@ -75,7 +75,7 @@ class Project extends React.Component {
                     </form>
                     <ul className="list-group">
                         {
-                            this.props.projects.map((contact, i) => this.listView(contact, i))
+                            this.props.projects.map((contact, id) => this.listView(contact, id))
                         }
                     </ul>
                 </div>

@@ -8,8 +8,6 @@ const signInReducer = (state = {}, action) => {
                 ...state,
                 type: action.type
             };
-        case actionTypes.LOGOUT_USER:
-            return {...state}
         case actionTypes.SIGN_IN_SUCCESS:
             return {
                 ...state,

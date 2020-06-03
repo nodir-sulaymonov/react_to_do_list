@@ -1,5 +1,5 @@
 import * as actionTypes from '../actions/addTask';
-import {ADD_TASK_SUCCESS} from "../actions/addTask";
+
 
 const initialState = {
     taskList: []
@@ -8,17 +8,13 @@ const initialState = {
 
 const addReducer = (state = initialState, action)=>{
     switch (action.type){
-        case ADD_TASK_SUCCESS:
-
+        case actionTypes.ADD_TASK_SUCCESS:
             return {
                 ...state,
                 taskList: action.payload
             };
-
-
         case actionTypes.LIST_SORT_NAME:
             let sortedArray = [...state.taskList];
-            // eslint-disable-next-line array-callback-return
             sortedArray.sort((a, b) => {
                 let nameA = a.name.toUpperCase();
                 let nameB = b.name.toUpperCase();
@@ -41,6 +37,11 @@ const addReducer = (state = initialState, action)=>{
             return {
                 ...state,
                 taskList: sortedPriority
+            };
+        case actionTypes.CREATE_TASK_ERROR:
+            return {
+                ...state,
+                error: action.payload.error
             };
         default:
             return state;
