@@ -4,23 +4,32 @@ label {
 
 .container {
   display: flex;
-  flex-direction: column;
+  justify-content: center;
   align-items: center;
-
+  flex-direction: column;
   min-height: 100vh;
 
   &-theme-light {
-    background-color: bisque;
+    background-color:  #eeeeee;
   }
+}
+
+.sign_in_up{
+  display: flex;
+  font-size: 25px;
+  margin-bottom: 20px;
+  font-family: "Arial", serif;
+  font-weight: bold;
+  color: #6685ba;
 }
 
 .list_container li{
   display: flex;
   flex-direction: row;
   border: dotted #9fb4f2 2px;
-  margin: 10px;
+  margin: 20px;
+  padding: 10px;
   list-style-type: none;
-  width: 30%;
 }
 
 .list_container {
@@ -30,11 +39,14 @@ label {
 .list_container_left{
   display: flex;
   flex-direction: column;
+  align-items: center;
   width: 90px;
 
 }
 .list_container_right {
-  margin-top: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   font-size: 50px;
 }
 input {
@@ -42,7 +54,8 @@ input {
   margin-bottom: 10px;
   border-radius: 5px;
   padding: 3px 5px;
-  border: 1px solid #eee;
+  border: 1px solid cornflowerblue;
+  width: 100%;
 
   &:focus {
     outline: none;

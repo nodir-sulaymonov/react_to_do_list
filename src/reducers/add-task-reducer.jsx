@@ -1,18 +1,20 @@
-import * as actionTypes from '../actions/addPeople';
+import * as actionTypes from '../actions/addTask';
+
 
 const initialState = {
-    people: []
+    taskList: []
 };
+
 
 const addReducer = (state = initialState, action)=>{
     switch (action.type){
-        case actionTypes.ADD_POST_SUCCESS:
+        case actionTypes.ADD_TASK_SUCCESS:
             return {
                 ...state,
-                 people: [...state.people, action.people]
+                taskList: action.payload
             };
         case actionTypes.LIST_SORT_NAME:
-            let sortedArray = [...state.people];
+            let sortedArray = [...state.taskList];
             sortedArray.sort((a, b) => {
                 let nameA = a.name.toUpperCase();
                 let nameB = b.name.toUpperCase();
@@ -25,18 +27,21 @@ const addReducer = (state = initialState, action)=>{
             });
             return {
                 ...state,
-                people: sortedArray
+                taskList: sortedArray
             };
         case actionTypes.LIST_SORT_PRIORITY:
-            let sortedPriority = [...state.people];
+            let sortedPriority = [...state.taskList];
             sortedPriority.sort((a, b) => {
-                if (true) {
-                    return a.priority - b.priority;
-                }
+                return a.priority - b.priority;
             });
             return {
                 ...state,
-                people: sortedPriority
+                taskList: sortedPriority
+            };
+        case actionTypes.CREATE_TASK_ERROR:
+            return {
+                ...state,
+                error: action.payload.error
             };
         default:
             return state;

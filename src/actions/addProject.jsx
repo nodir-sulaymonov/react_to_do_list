@@ -1,45 +1,49 @@
 import axios from "axios";
 import {apiUrl} from "../common/common";
-export const CREATE_NEW_CONTACT = 'CREATE_NEW_CONTACT';
-export const REMOVE_CONTACT = 'REMOVE_CONTACT';
+import {successNotifiy,failureNotify} from "./notifications/notifications";
 
-export const createProject = (values, history) => {
+export const PROJECT_LIST = 'PROJECT_LIST';
+export const PROJECT_LIST_ERROR = 'PROJECT_LIST_ERROR';
+
+
+
+export const createProject = (values) => {
     return dispatch => {
-        axios.post(`${apiUrl}api/projects`, {
+        const token = localStorage.token;
+        axios.post(`${apiUrl}api/projects/`, {
             name: values.name,
-        })
+        },)
             .then(res => {
-                dispatch(createContact(res.data));
-                localStorage.setItem("token", res.data.token);
-                history.push('/');
+                dispatch(fetchProjectList());
+                successNotifiy('OK','You successfully registered.');
             })
             .catch(err => {
+                dispatch(projectListError(err.message));
+                failureNotify('ERROR',err.message)
             });
     };
 };
 
-export const deleteProject = (values, history) => {
+
+export const fetchProjectList = () => {
     return dispatch => {
-        axios.post(`${apiUrl}api/projects/id`, values)
+        axios.get(`${apiUrl}api/projects/`,)
             .then(res => {
-                dispatch(deleteContact(res.data));
-                localStorage.setItem("token", res.data.token);
-                history.push('/');
+                dispatch({
+                    type: PROJECT_LIST,
+                    payload: res.data
+                });
+                successNotifiy('OK','You successfully registered.');
             })
             .catch(err => {
+                dispatch(projectListError(err.message));
+                failureNotify('ERROR',err.message)
             });
-    };
-};
-export const createContact = (contact) => {
-    return {
-        type: CREATE_NEW_CONTACT,
-        contact: contact
     }
-};
-
-export const deleteContact = (id) => {
-    return {
-        type: REMOVE_CONTACT,
-        id: id
+}
+const projectListError = error => ({
+    type: PROJECT_LIST_ERROR,
+    payload: {
+        error
     }
-};
+});

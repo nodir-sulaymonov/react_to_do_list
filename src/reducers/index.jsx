@@ -1,7 +1,11 @@
 import {combineReducers} from 'redux';
-import addPeople from './add-poeple-reducer';
+import addTasks from './add-task-reducer';
 import addProjects from './add-project-reducer'
+import signUpReducer from "./sign-up-reducer";
+import signInReducer from "./sign-in-reducer";
 export default combineReducers({
-    addList: addPeople,
-    contacts: addProjects
+    tasksResult: addTasks,
+    contacts: addProjects,
+    signUpResult: signUpReducer,
+    signInReducer: signInReducer
 });
